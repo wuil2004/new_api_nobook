@@ -1,0 +1,23 @@
+/* back_button.css */
+
+/* Estilo para el botón flotante */
+.back-button {
+    position: fixed; /* Fija la posición en la pantalla */
+    top: 20px; /* Distancia desde la parte superior */
+    left: 20px; /* Distancia desde el lado izquierdo */
+    padding: 10px 15px; /* Espaciado interno */
+    font-size: 14px; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+    color: white; /* Color del texto */
+    background-color: #dc3545; /* Color de fondo (rojo) */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 50px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animación */
+}
+
+.back-button:hover {
+    background-color: #c82333; /* Cambio de color al pasar el mouse */
+    transform: scale(1.1); /* Agranda el botón un poco */
+}

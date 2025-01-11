@@ -1,0 +1,53 @@
+/* notebook.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2800EB;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #3486E3;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.notebook-content {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #9EC2EB;
+    border-radius: 8px;
+}
+
+/* Estilo para el botón flotante */
+.back-button {
+    position: fixed; /* Fija el botón en la pantalla */
+    top: 20px; /* Distancia desde la parte superior */
+    left: 20px; /* Distancia desde el lado izquierdo */
+    padding: 10px 15px; /* Espaciado interno */
+    font-size: 14px; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+    color: white; /* Color del texto */
+    background-color: #007bff; /* Color de fondo */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 50px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animación */
+}
+
+.back-button:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+    transform: scale(1.1); /* Agrandar un poco */
+}
+
+a {
+    text-decoration: none;
+    color: #007BFF;
+}
+a:hover {
+    text-decoration: underline;
+}

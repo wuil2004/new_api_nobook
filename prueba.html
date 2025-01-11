@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternar Notebooks Arriba</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        /* Estilo general de botones */
+        .boton {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 20px;
+            border: 2px solid black;
+            box-shadow: 4px 4px 0px #000;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        .boton:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Contenedor de notebooks */
+        #lista-notebooks {
+            display: none; /* Oculto por defecto */
+            margin-bottom: 10px; /* Espacio entre lista y botón */
+        }
+
+        /* Botón "Ver notebooks" */
+        #toggle-btn {
+            display: inline-block;
+            margin: 15px;
+            padding: 10px 25px;
+            border: 2px solid black;
+            box-shadow: 4px 4px 0px #000;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        #toggle-btn:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h2>API NOTEBOOCK</h2>
+
+    <!-- Lista de notebooks que aparece arriba -->
+    <div id="lista-notebooks">
+        <div class="boton">notbook 1</div>
+        <div class="boton">notbook 2</div>
+        <div class="boton">notbook 3</div>
+        <div class="boton">notbook 4</div>
+        <div class="boton">notbook 5</div>
+        <div class="boton">notbook n</div>
+    </div>
+
+    <!-- Botón principal -->
+    <div>
+        <button id="toggle-btn" class="boton">Ver Notebooks</button>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById("toggle-btn");
+        const listaNotebooks = document.getElementById("lista-notebooks");
+
+        toggleBtn.addEventListener("click", function() {
+            // Alternar visibilidad de la lista
+            if (listaNotebooks.style.display === "none" || listaNotebooks.style.display === "") {
+                listaNotebooks.style.display = "block";
+                toggleBtn.textContent = "Ocultar Notebooks";
+            } else {
+                listaNotebooks.style.display = "none";
+                toggleBtn.textContent = "Ver Notebooks";
+            }
+        });
+    </script>
+</body>
+</html>

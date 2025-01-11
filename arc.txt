@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Notebooks</title>
+    <!-- Enlace al archivo CSS -->
+    <!--<link rel="stylesheet" href="css/styles.css">-->
+    <link rel="stylesheet" href="css/prueba.css">
+    
+</head>
+<body>
+    <section class="content-form">
+        <h1>API NOTEBOOK</h1>
+
+        <!-- Botón para ver los notebooks -->
+        <section id="list-section">
+            <h2>Lista de Notebooks</h2>
+            <button id="btnlista" type="button" onclick="fetchNotebooks()">Ver Notebooks</button>
+            <!-- Contenedor de notebooks en cuadrícula -->
+            <div id="notebooks-container" class="grid-container"></div>
+        </section>
+
+        <!-- Sección para subir archivos -->
+        <section id="upload-section">
+            <h2>Subir Notebook</h2>
+            <input type="file" id="file-input" />
+            <button id="btnsubir" type="button" onclick="uploadNotebook()">Subir</button>
+            <p id="upload-response"></p>
+        </section>
+    </section>
+
+    <!-- Archivo JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+const API_BASE_URL = "http://127.0.0.1:8000"; // URL base de tu API
+
+// Función para subir un notebook
+async function uploadNotebook() {
+    const fileInput = document.getElementById('file-input');
+    const uploadResponse = document.getElementById('upload-response');
+    const file = fileInput.files[0];
+
+    if (!file) {
+        uploadResponse.textContent = "Por favor selecciona un archivo.";
+        uploadResponse.style.color = "red";
+        return;
+    }
+
+    uploadResponse.textContent = "Cargando...";
+    uploadResponse.style.color = "blue";
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+        const response = await fetch(`${API_BASE_URL}/upload/`, {
+            method: "POST",
+            body: formData,
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            uploadResponse.textContent = result.message || "Archivo subido con éxito.";
+            uploadResponse.style.color = "green";
+            fetchNotebooks(); // Actualiza la lista automáticamente
+        } else {
+            uploadResponse.textContent = result.detail || "Error al subir el archivo.";
+            uploadResponse.style.color = "red";
+        }
+    } catch (error) {
+        uploadResponse.textContent = `Error al subir el archivo: ${error.message}`;
+        uploadResponse.style.color = "red";
+    }
+
+    setTimeout(() => uploadResponse.textContent = "", 5000);
+}
+
+// Función para obtener y mostrar los notebooks
+async function fetchNotebooks() {
+    const notebooksContainer = document.getElementById('notebooks-container');
+
+    notebooksContainer.innerHTML = "<p>Cargando...</p>";
+
+    try {
+        const response = await fetch(`${API_BASE_URL}/list/`);
+        const result = await response.json();
+
+        notebooksContainer.innerHTML = ""; // Limpiar el contenedor
+
+        result.notebooks.forEach((notebook) => {
+            const notebookItem = document.createElement("div");
+            notebookItem.classList.add("grid-item");
+            notebookItem.textContent = notebook;
+
+            // Evento para abrir el notebook al hacer clic
+            notebookItem.onclick = () => {
+                window.open(`${API_BASE_URL}/notebook/${notebook}/`, "_blank");
+            };
+
+            notebooksContainer.appendChild(notebookItem);
+        });
+    } catch (error) {
+        notebooksContainer.innerHTML = `<p style="color: red;">Error al cargar los notebooks: ${error.message}</p>`;
+    }
+}
