@@ -3,34 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Notebooks</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="icon" type="image/x-icon" href="/css/ic.ico">
-
-
+    <title>Notebookś</title>
+    <link rel="stylesheet" href="/css/styles2.css">
 </head>
 <body>
-    <header>
-        <h1>Gestión de Notebooks</h1>
-    </header>
-    <main>
-        <section id="upload-section">
-            <h2>Subir Notebook</h2>
-            <input type="file" id="file-input" onchange="displayFileName()" />
-            <p id="file-name"></p> <!-- Aquí aparecerá el nombre del archivo -->
-            <button id="btn-subir" onclick="uploadNotebook()">Subir</button>
-            <p id="upload-response"></p>
-        </section>
-
-        <section id="list-section">
-            <h2>Lista de Notebooks</h2>
-            <button id="btn-lista" type="button" onclick="toggleNotebooks()">Cargar Lista</button>
-            <div id="notebooks-grid" class="grid"></div>
-        </section>
-    </main>
-    <footer>
-        <p>© 2024 Gestión de Notebooks</p>
-    </footer>
-    <script src="/js/script.js"></script>
+    <div class="fullscreen" onclick="goToNextPage()">
+        <h1 class="welcome-text"> </h1>
+    </div>
+    <script src="/js/script2.js"></script>
 </body>
 </html>
