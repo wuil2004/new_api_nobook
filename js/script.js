@@ -89,12 +89,14 @@ async function fetchNotebooks() {
             const viewButton = document.createElement("button");
             viewButton.textContent = "Código";
             viewButton.onclick = () =>
-                window.open(`${API_BASE_URL}/notebook/${notebook}/?exclude_input=false`, "_blank");
+                //window.open(`${API_BASE_URL}/notebook/${notebook}/?exclude_input=false`, "_blank");
+                window.location.href = `${API_BASE_URL}/notebook/${notebook}/?exclude_input=false`;
 
             const resultsButton = document.createElement("button");
             resultsButton.textContent = "Resultados";
             resultsButton.onclick = () =>
-                window.open(`${API_BASE_URL}/notebook/${notebook}/?exclude_input=true`, "_blank");
+                //window.open(`${API_BASE_URL}/notebook/${notebook}/?exclude_input=true`, "_blank");
+                window.location.href = `${API_BASE_URL}/notebook/${notebook}/?exclude_input=true`;
 
             buttonsContainer.appendChild(viewButton);
             buttonsContainer.appendChild(resultsButton);

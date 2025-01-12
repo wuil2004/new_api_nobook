@@ -78,6 +78,39 @@ button:hover {
     width: 100%;
 }
 
+/* Estilo para el título */
+#project-description h2 {
+    text-align: center; /* Centra el título */
+    font-size: 1.8em; /* Ajusta el tamaño de la fuente */
+    margin-bottom: 15px; /* Espaciado inferior */
+}
+
+/* Estilo para la lista */
+#project-description ul {
+    margin: 15px 0;
+    padding-left: 20px; /* Indenta la lista */
+    list-style-type: disc; /* Puntos para los elementos */
+}
+
+#project-description li {
+    margin-bottom: 10px; /* Espaciado entre elementos de la lista */
+    line-height: 1.6; /* Altura de línea para mejorar la legibilidad */
+}
+
+/* Estilo para los párrafos */
+#project-description p {
+    margin: 10px 0;
+    line-height: 1.8; /* Mejora la separación entre líneas */
+    
+}
+
+#project-description {
+    background: #002a3a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
 #list-section {
     background: #002a3a;
     padding: 20px;
@@ -93,7 +126,7 @@ button:hover {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Aumenta tamaño mínimo */
     gap: 20px;
     margin-top: 20px;
 }
@@ -128,6 +161,13 @@ button:hover {
     font-size: 1.1rem;
     margin-bottom: 15px;
     font-weight: bold;
+    word-wrap: break-word; /* Divide palabras largas */
+    white-space: normal; /* Permite múltiples líneas */
+    overflow: hidden; /* Oculta texto desbordado */
+    text-align: center; /* Centra el texto */
+    max-height: 3.3em; /* Limita a 3 líneas */
+    line-height: 1.1em; /* Altura de línea */
+    text-overflow: ellipsis; /* Agrega puntos suspensivos */
 }
 
 .card-buttons {
@@ -142,3 +182,16 @@ button:hover {
     color: #00ffc3;
     margin-top: 10px;
 }
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 600px) {
+    .card-title {
+        font-size: 0.9rem; /* Reduce el tamaño de fuente */
+        max-height: 2.2em; /* Limita a 2 líneas */
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta columnas */
+    }
+}
+
