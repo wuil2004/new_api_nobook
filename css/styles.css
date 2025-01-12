@@ -8,8 +8,8 @@
 
 body {
     font-family: "Quicksand", sans-serif;
-    background: linear-gradient(135deg, #2b2d42, #8d99ae);
-    color: #edf2f4;
+    background: linear-gradient(135deg, #000428, #004e92);
+    color: #00ffc3;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,17 +18,18 @@ body {
 }
 
 header {
-    background: #ef233c;
-    color: #edf2f4;
+    background: #002a3a;
+    color: #00ffc3;
     width: 100%;
     text-align: center;
     padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
     font-size: 2.5rem;
     font-weight: 700;
+    text-shadow: 0 0 10px #00ffc3, 0 0 20px #00ffc3;
 }
 
 main {
@@ -42,30 +43,33 @@ main {
 }
 
 #upload-section {
-    background: #edf2f4;
+    background: #002a3a;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 #upload-section h2 {
     font-size: 1.5rem;
-    color: #2b2d42;
+    color: #00ffc3;
     margin-bottom: 15px;
 }
 
 button {
-    background: #ef233c;
-    color: #edf2f4;
+    background: #00ffc3;
+    color: #002a3a;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00ffc3;
 }
 
 button:hover {
-    background: #0c0002;
+    background: #004e92;
+    color: #00ffc3;
 }
 
 #file-input {
@@ -75,15 +79,15 @@ button:hover {
 }
 
 #list-section {
-    background: #edf2f4;
+    background: #002a3a;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 #list-section h2 {
     font-size: 1.5rem;
-    color: #2b2d42;
+    color: #00ffc3;
     margin-bottom: 15px;
 }
 
@@ -95,26 +99,29 @@ button:hover {
 }
 
 .card {
-    background: #8d99ae;
-    color: #edf2f4;
+    background: #004e92;
+    color: #00ffc3;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     transition: transform 0.3s ease, background 0.3s ease;
+    text-shadow: 0 0 5px #00ffc3;
 }
 
 .card:hover {
-    background: #ef233c;
+    background: #00ffc3;
+    color: #002a3a;
     transform: scale(1.05);
 }
 
 .card-icon {
     font-size: 3rem;
     margin-bottom: 10px;
+    color: #00ffc3;
 }
 
 .card-title {
@@ -132,6 +139,6 @@ button:hover {
 
 #file-name {
     font-size: 1rem;
-    color: #2b2d42; /* Color opcional para el nombre del archivo */
+    color: #00ffc3;
     margin-top: 10px;
 }
