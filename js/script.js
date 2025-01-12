@@ -1,6 +1,6 @@
 const API_BASE_URL = "https://notbook-api.onrender.com";
 
-/*const API_BASE_URL = "http://127.0.0.1:8000"; // URL base de tu API*/
+const API_BASE_URL = "http://127.0.0.1:8000"; // URL base de tu API*/
 
 
 // Mostrar el nombre del archivo seleccionado
