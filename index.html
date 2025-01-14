@@ -3,13 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notebookś</title>
-    <link rel="stylesheet" href="/css/styles2.css">
+    <title>Gestión de Notebooks</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/css/ic.ico">
 </head>
 <body>
-    <div class="fullscreen" onclick="goToNextPage()">
-        <h1 class="welcome-text"> </h1>
-    </div>
-    <script src="/js/script2.js"></script>
+    <header>
+        <h1>Gestión de Notebooks</h1>
+    </header>
+    <main>
+        <section id="project-description">
+            <h2>Descripción del Proyecto</h2>
+            <p>
+                En este proyecto se presenta un conjunto de notebooks desarrollados durante el curso, 
+                los cuales abarcan diversos aspectos del análisis y modelado de datos. Estas prácticas 
+                se enfocan en la aplicación de técnicas de machine learning y en procesos de preprocesamiento 
+                de datos, incluyendo:
+            </p>
+            
+            <ul>
+                <li>Exploración y estructuración de datos: Técnicas para organizar y analizar datos antes de su modelado.</li>
+                <li>Métodos como regresión lineal y regresión logística.</li>
+                <li>Evaluación del desempeño de modelos.</li>
+            </ul>
+            <p>
+                Cada notebook representa una etapa clave en el ciclo de vida de un proyecto de ciencia de datos, 
+                permitiendo una comprensión integral del flujo de trabajo y de las herramientas necesarias 
+                para resolver problemas basados en datos.
+            </p>
+        </section>
+
+        <section id="upload-section">
+            <h2>Subir Notebook</h2>
+            <input type="file" id="file-input" onchange="displayFileName()" />
+            <p id="file-name"></p> <!-- Aquí aparecerá el nombre del archivo -->
+            <button id="btn-subir" onclick="uploadNotebook()">Subir</button>
+            <p id="upload-response"></p>
+        </section>
+
+        <section id="list-section">
+            <h2>Lista de Notebooks</h2>
+            <button id="btn-lista" type="button" onclick="toggleNotebooks()">Cargar Lista</button>
+            <div id="notebooks-grid" class="grid"></div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Gestión de Notebooks</p>
+    </footer>
+    <script src="/js/script.js"></script>
 </body>
 </html>

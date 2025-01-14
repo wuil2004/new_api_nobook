@@ -26,7 +26,7 @@ app.mount("/notebooks", StaticFiles(directory=UPLOAD_FOLDER), name="notebooks")
 def root():
     """Muestra la página principal."""
     try:
-        with open("indx.html", "r", encoding="utf-8") as f:
+        with open("index.html", "r", encoding="utf-8") as f:
             html_content = f.read()
         return HTMLResponse(content=html_content)
     except FileNotFoundError:
